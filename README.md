@@ -1,16 +1,15 @@
-Mapclient Base
-====================
+# Mapclient Base
 
-Dokumentation
--------------
+## Dokumentation
 
-* Build-Prozess
-    * Übernahme original Sourcen
-        * Anpassungsmöglichkeiten Build-Prozess
-            * Integration eigener Komponente
-            * Ausschluss von Komponente
-            * Konfigurationen beim Build-Prozess
-    * Getting Started 
 
-* Anpassung am Source-Code
-    * Integration in den Build-Prozess
+### Build-Prozess
+#### Übernahme original Sourcen
+##### Anpassungsmöglichkeiten Build-Prozess
+###### Integration eigener Komponente
+###### Ausschluss von Komponente
+###### Konfigurationen beim Build-Prozess
+##### Getting Started 
+
+### Anpassung am Source-Code
+#### Integration in den Build-Prozess
