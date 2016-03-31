@@ -34,22 +34,28 @@ Beim Build-Prozess des Projektes muss eine Überführung der Originalen Sourcen 
 Hier einige Beispiele von definierten Variablen, die bei dem Build-Prozess eine Rolle spielen:
 
 **SRC_JS_FILES** beinhaltet alle JavaScript-Dateien, die für den Mapclient benötigt werden.
-> SRC_JS_FILES := $(shell find src/components src/js -type f -name '*.js')
+
+    SRC_JS_FILES := $(shell find src/components src/js -type f -name '*.js')
 
 **OL3_VERSION** ist eine Variable, die die benötigten OpenLayers3-Sourcen auf einen bestimmt Stand aktualisieren kann.
-> OL3_VERSION ?= 627abaf1a71d48627163eb00ea6a0b6fb8dede14
+
+    OL3_VERSION ?= 627abaf1a71d48627163eb00ea6a0b6fb8dede14
 
 **DEFAULT_TOPIC_ID** bestimmt die initiale ausgewählte Kategorie des MapClients.
-> DEFAULT_TOPIC_ID ?= ech
+
+    DEFAULT_TOPIC_ID ?= ech
 
 **LANGUAGES** listet alle vorhanden Sprachen zur Lokalisierung des Clients auf.
-> LANGUAGES ?= '[\"de\", \"en\", \"fr\", \"it\", \"rm\"]'
+
+    LANGUAGES ?= '[\"de\", \"en\", \"fr\", \"it\", \"rm\"]'
 
 **DEFAULT_EXTENT** definiert den initialen Kartenausschnitt.
-> DEFAULT_EXTENT ?= '[420000, 30000, 900000, 350000]'
+
+    DEFAULT_EXTENT ?= '[420000, 30000, 900000, 350000]'
 
 **DEFAULT_EPSG** bestimmt die initiale Projekten der Kartendarstellung.
-> DEFAULT_EPSG ?= EPSG:21781
+
+    DEFAULT_EPSG ?= EPSG:21781
 
 ###### Integration eigener Komponenten
 
@@ -61,6 +67,15 @@ Ein Blick auf den Wert der genannten Variable, stellt fest, dass alle Dateien mi
 Analog zur Integration eigener Komponenten ist der Ausschluss von Komponenten von der Variable **SRC_JS_FILES** abhängig. Ein Ausschluss von Komponenten ist aber etwas komplizierter, da ggfs. Abhängigkeiten zu anderen Komponenten existieren und referenzierte Komponenten aus der Datei **index.html** entfernt werden müssen.
 
 ##### Getting Started 
+
+Checkout:
+
+    $ git clone https://github.com/informationgrid/ingrid-mapclient-base.git
+
+Build:
+
+    make dev
+    make prod
 
 ### Source-Code
 #### Anpassung am Source-Code
