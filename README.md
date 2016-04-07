@@ -79,4 +79,10 @@ Build:
 
 ### Source-Code
 #### Anpassung am Source-Code
+
+Für den BasisClient ohne die original SDI (Spatial Data Infrastructure) sind einige Anpassungen vor zu nehmen. Diese werden in der folgenden Liste dokumentiert.
+
+
 #### Integration in den Build-Prozess
+
+Die für den BasisClient notwendigen Änderungen sind in dem Verzeichniss baseClient vorgehalten. Vor dem Build-Lauf werden die entsprechenden Dateien im ausgecheckten original Sourcen des Submoduls ersetzt. Dies erfolgt mittels eines maven-Scriptes.
