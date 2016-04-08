@@ -134,7 +134,7 @@ Unter Sprungmarke prd/lib/build.js: sind nur die JavaSript-Bibliotheken einzutra
 
 Die Datei befindet sich im Verzeichnis src.
 
-* Anpassen des title und Applicationname
+* Anpassen des Title und Applicationname
 
 * Austausch des favicon.ico und der Header-Grafik
 
