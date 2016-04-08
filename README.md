@@ -82,7 +82,60 @@ Build:
 
 Für den BasisClient ohne die original SDI (Spatial Data Infrastructure) sind einige Anpassungen vor zu nehmen. Diese werden in der folgenden Liste dokumentiert.
 
+* js/CatalogtreeController.js
+    * Anpassen des Zugriffs auf den CatalogServer zur Auslieferung der Konfiguration zu einem Thema
+
+* js/ImportWmsController.js
+    * Liste mit den gewünschten externen WMS-Diensten
+
+* js/TranslationController.js
+    * Angabe der zur Verfügung gestellten Sprache, diese muss mit den Vorgaben im Makefile übereinstimmen
+
+* /js/SearchController.js
+    * Angabe des Endpunkts für die Suche nach Features und Layern
+
+* components\backgroundselector\BackgroundService.js
+    * Eintragen der gewünschten Hintergrundkarten
+
 
 #### Integration in den Build-Prozess
 
-Die für den BasisClient notwendigen Änderungen sind in dem Verzeichniss baseClient vorgehalten. Vor dem Build-Lauf werden die entsprechenden Dateien im ausgecheckten original Sourcen des Submoduls ersetzt. Dies erfolgt mittels eines maven-Scriptes.
+Die für den BasisClient notwendigen Änderungen sind in den Verzeichnissen baseClient_NUMIS und baseClient_Umweltkarten vorgehalten. Vor dem Build-Lauf werden die entsprechenden Dateien im ausgecheckten original Sourcen des Submoduls ersetzt. Dies erfolgt mittels eines maven-Scriptes.
+
+#### Grafikdateien
+
+Im Verzeichnis img werden die gesamten Grafiken gespeichert. Hier sind die Grafiken auszutauschen bzw. zu speichern , die im BasisClient verwendet werden sollen.
+
+#### Anpassungen am Makefile
+
+Im Folgenden sind die Variablen gelistet, die auf den gewünschten BasisClient angepasst werden müssen.
+
+API_URL
+
+DEFAULT_TOPIC_ID 
+
+LANGUAGES
+
+DEFAULT_EXTENT 
+
+DEFAULT_RESOLUTION
+
+DEFAULT_LEVEL_OF_DETAIL 
+
+RESOLUTIONS 
+
+LEVEL_OF_DETAILS 
+
+DEFAULT_EPSG 
+
+Unter Sprungmarke prd/lib/build.js: sind nur die JavaSript-Bibliotheken einzutragen, die auch im BasisClient verwendet werden sollen.
+
+#### Anpassungen an der index.mako.html
+
+Die Datei befindet sich im Verzeichnis src.
+
+* Anpassen des title und Applicationname
+
+* Austausch des favicon.ico und der Header-Grafik
+
+* gewünschte EPSP\<wkid\>.js-Bibliotheken für Koordinatendarstellungen in dem jeweiligen Koordinatensystem eintragen
