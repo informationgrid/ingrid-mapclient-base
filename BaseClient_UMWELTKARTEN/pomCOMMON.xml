@@ -35,22 +35,22 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>../mf-geoadmin3</outputDirectory>
+                            <outputDirectory>../mf-geoadmin3/src</outputDirectory>
                             <resources>          
                                 <resource>
                                     <directory>.</directory>
                                     <filtering>true</filtering>
                                     <excludes>
                                         <exclude>**/*.xml</exclude>
-                                        <exclude>**/*.json</exclude>
+<!--                                        <exclude>**/*.json</exclude>
                                         <exclude>Basisdaten/*</exclude>
-                                        <exclude>Hydrologie/*</exclude>
+                                        <exclude>Hydrologie/*</exclude>-->
                                     </excludes>
                                 </resource>
                             </resources>              
                         </configuration>            
                     </execution>
-                    <execution>
+<!--                    <execution>
                         <id>copy-resources-2</id>
                         <phase>initialize</phase>
                         <goals>
@@ -72,7 +72,7 @@
                                 </resource>
                             </resources>              
                         </configuration>            
-                    </execution>
+                    </execution>-->
                     <execution>
                         <id>copy-resources-3</id>
                         <phase>initialize</phase>
