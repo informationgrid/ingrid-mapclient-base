@@ -1,0 +1,15 @@
+{
+    "topics": [{
+        "langs": "de",
+        "selectedLayers": [],
+        "backgroundLayers": ["TopographieGrau", "OrthophotosBG", "TopographieFarbe"],
+        "id": "Basisdaten",
+        "showCatalog": true
+    }, {
+        "langs": "de",
+        "selectedLayers": [],
+        "backgroundLayers": ["TopographieGrau", "TopographieFarbe", "TK50historisch"],
+        "id": "Hydrologie",
+        "showCatalog": true
+    }]
+}

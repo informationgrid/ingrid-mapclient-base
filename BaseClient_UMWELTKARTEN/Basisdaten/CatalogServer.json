@@ -1,0 +1,206 @@
+{
+    "results": {
+        "root": {
+            "category": "root",
+            "children": [{
+                "category": "cat100",
+                "children": [{
+                    "category": "layer",
+                    "id": 101,
+                    "label": "Autobahnen",
+                    "layerBodId": "Autobahnen",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 102,
+                    "label": "Grosse Flüsse",
+                    "layerBodId": "Grosse_FluesseBasis",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 103,
+                    "label": "Grosse Seen",
+                    "layerBodId": "GrosseSeen",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 107,
+                    "label": "Kueste",
+                    "layerBodId": "Kueste",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 104,
+                    "label": "Ortslagen",
+                    "layerBodId": "Ortslagen",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 105,
+                    "label": "Gemeinden",
+                    "layerBodId": "Gemeinden",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 106,
+                    "label": "Landkreise",
+                    "layerBodId": "Landkreise",
+                    "staging": "prod"
+                }],
+                "id": 100,
+                "label": "Grundlagen",
+                "selectedOpen": false,
+                "staging": "prod"
+            }, {
+                "category": "cat101",
+                "children": [{
+                    "category": "layer",
+                    "id": 109,
+                    "label": "DTK 1000 SW",
+                    "layerBodId": "DTK1000SWKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 110,
+                    "label": "DTK 500 SW",
+                    "layerBodId": "DTK500SWKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 111,
+                    "label": "DTK 200 SW",
+                    "layerBodId": "DTK200SWKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 112,
+                    "label": "DTK 100 SW",
+                    "layerBodId": "DTK100SWKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 113,
+                    "label": "DTK 50 SW",
+                    "layerBodId": "DTK50SWKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 114,
+                    "label": "DTK 25 SW",
+                    "layerBodId": "DTK25SWKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 115,
+                    "label": "AK5 V SW",
+                    "layerBodId": "AK5VSWKO",
+                    "staging": "prod"
+                }],
+                "id": 108,
+                "label": "Karten Schwarz-Weiß",
+                "selectedOpen": false,
+                "staging": "prod"
+            }, {
+                "category": "cat102",
+                "children": [{
+                    "category": "layer",
+                    "id": 117,
+                    "label": "DTK 1000 Farbe",
+                    "layerBodId": "DTK1000FAKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 118,
+                    "label": "DTK 500 Farbe",
+                    "layerBodId": "DTK500FAKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 119,
+                    "label": "DTK 200 Farbe",
+                    "layerBodId": "DTK200FAKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 120,
+                    "label": "DTK 100 Farbe",
+                    "layerBodId": "DTK100FAKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 121,
+                    "label": "DTK 50 SW",
+                    "layerBodId": "DTK50FAKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 122,
+                    "label": "DTK 25 Farbe",
+                    "layerBodId": "DTK25FAKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 123,
+                    "label": "AK 5 V Farbe",
+                    "layerBodId": "AK5VFAKO",
+                    "staging": "prod"
+                }],
+                "id": 116,
+                "label": "Karten Farbe",
+                "selectedOpen": false,
+                "staging": "prod"
+            }, {
+                "category": "cat103",
+                "children": [{
+                    "category": "layer",
+                    "id": 124,
+                    "label": "DTK 1000 Grau",
+                    "layerBodId": "DTK1000GRKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 125,
+                    "label": "DTK 500 Grau",
+                    "layerBodId": "DTK500GRKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 126,
+                    "label": "DTK 200 Grau",
+                    "layerBodId": "DTK200GRKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 127,
+                    "label": "DTK 100 Grau",
+                    "layerBodId": "DTK100GRKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 128,
+                    "label": "DTK 50 Grau",
+                    "layerBodId": "DTK50GRKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 129,
+                    "label": "DTK 25 Grau",
+                    "layerBodId": "DTK25GRKO",
+                    "staging": "prod"
+                }, {
+                    "category": "layer",
+                    "id": 130,
+                    "label": "AK 5 V Grau",
+                    "layerBodId": "AK5VGRKO",
+                    "staging": "prod"
+                }],
+                "id": 108,
+                "label": "Karten Grau",
+                "selectedOpen": false,
+                "staging": "prod"
+            }],
+            "id": 199,
+            "staging": "prod"
+        }
+    }
+}
