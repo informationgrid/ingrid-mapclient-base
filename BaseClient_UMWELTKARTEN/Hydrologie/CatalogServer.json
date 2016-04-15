@@ -10,7 +10,7 @@
                 "children": [{
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Untere Wasserbeh�rden",
+                    "label": "Untere Wasserbehörden",
                     "layerBodId": "Untere_Wasserbehoerden",
                     "id": 460
                 }],
@@ -47,19 +47,19 @@
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Trinkwasser_Prioritaetenprogramm",
+                    "label": "Trinkwasser Prioritätenprogramm",
                     "layerBodId": "Trinkwasser_Prioritaetenprogramm",
                     "id": 465
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Schutzgebiete_Trinkwasser_planar",
+                    "label": "Schutzgebiete Trinkwasser planar",
                     "layerBodId": "Schutzgebiete_Trinkwasser_planar",
                     "id": 466
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Gebietsname_und_-nummer",
+                    "label": "Gebietsname und -nummer",
                     "layerBodId": "Gebietsname_und_nummer",
                     "id": 467
                 }],
@@ -72,13 +72,13 @@
                 "children": [{
                     "category": "layer",
                     "staging": "prod",
-                    "label": "vorlaeufig_gesicherte_UESG_-_NDS",
+                    "label": "vorläufig gesicherte UESG - NDS",
                     "layerBodId": "vorlaeufig_gesicherte_UESG_NDS",
                     "id": 468
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Verordnungsflaechen_-_NDS",
+                    "label": "Verordnungsflächen - NDS",
                     "layerBodId": "Verordnungsflaechen_NDS",
                     "id": 469
                 }, {
@@ -90,11 +90,11 @@
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "einstweilig_gesicherte_UESF_HB",
+                    "label": "einstweilig gesicherte UESF HB",
                     "layerBodId": "einstweilig_gesicherte_UESF_-_HB",
                     "id": 471
                 }],
-                "label": "�berschwemmungsgebiete",
+                "label": "Überschwemmungsgebiete",
                 "id": 452
             }, {
                 "category": "cat74",
@@ -115,25 +115,25 @@
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Einzugsgebiete_4_Unterteilung",
+                    "label": "Einzugsgebiete 4. Unterteilung",
                     "layerBodId": "Einzugsgebiete_4_Unterteilung",
                     "id": 474
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Einzugsgebiete_3_Unterteilung",
+                    "label": "Einzugsgebiete 3. Unterteilung",
                     "layerBodId": "Einzugsgebiete_3_Unterteilung",
                     "id": 475
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Einzugsgebiete_2_Unterteilung",
+                    "label": "Einzugsgebiete 2. Unterteilung",
                     "layerBodId": "Einzugsgebiete_2_Unterteilung",
                     "id": 476
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Einzugsgebiete_1_Unterteilung",
+                    "label": "Einzugsgebiete 1. Unterteilung",
                     "layerBodId": "Einzugsgebiete_1_Unterteilung",
                     "id": 477
                 }, {
@@ -145,31 +145,31 @@
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Gewaessernetz_mit_Fliessrichtung",
+                    "label": "Gewässernetz mit Fließrichtung",
                     "layerBodId": "Gewaessernetz_mit_Fliessrichtung",
                     "id": 479
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Graeben",
+                    "label": "Gräben",
                     "layerBodId": "Graeben",
                     "id": 480
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Wattflaechen",
+                    "label": "Wattflächen",
                     "layerBodId": "Wattflaechen",
                     "id": 481
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Gewaesserflaechen",
+                    "label": "Gewässerflächen",
                     "layerBodId": "Gewaesserflaechen",
                     "id": 482
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Grosse_Fluesse",
+                    "label": "Grosse Flüsse",
                     "layerBodId": "Grosse_FluesseHydro",
                     "id": 483
                 }],
@@ -182,19 +182,19 @@
                 "children": [{
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Pegelmessnetz_GUEN",
+                    "label": "Pegelmessnetz GUEN",
                     "layerBodId": "Pegelmessnetz_GUEN",
                     "id": 484
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Hydrologische_Landschaften_Pegel",
+                    "label": "Hydrologische Landschaften Pegel",
                     "layerBodId": "Hydrologische_Landschaften_Pegel",
                     "id": 485
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Hydrologische_Landschaften",
+                    "label": "Hydrologische Landschaften",
                     "layerBodId": "Hydrologische_Landschaften",
                     "id": 486
                 }],
@@ -207,41 +207,41 @@
                 "children": [{
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Detailkartierung_Fotos",
+                    "label": "Detailkartierung Fotos",
                     "layerBodId": "Detailkartierung_Fotos",
                     "id": 487
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Detailkartierung_Uebersicht",
+                    "label": "Detailkartierung Übersicht",
                     "layerBodId": "Detailkartierung_Uebersicht",
                     "id": 488
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Bewertung_Gesamt",
+                    "label": "Bewertung Gesamt",
                     "layerBodId": "Bewertung_Gesamt",
                     "id": 489
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Bewertung_Umland",
+                    "label": "Bewertung Umland",
                     "layerBodId": "Bewertung_Umland",
                     "id": 490
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Bewertung_Ufer",
+                    "label": "Bewertung Ufer",
                     "layerBodId": "Bewertung_Ufer",
                     "id": 491
                 }, {
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Bewertung_Sohle",
+                    "label": "Bewertung Sohle",
                     "layerBodId": "Bewertung_Sohle",
                     "id": 492
                 }],
-                "label": "Gew�sserstruktur",
+                "label": "Gewässerstruktur",
                 "id": 453
             }, {
                 "category": "cat77",
@@ -250,7 +250,7 @@
                 "children": [{
                     "category": "layer",
                     "staging": "prod",
-                    "label": "Messstellen",
+                    "label": "Meßstellen",
                     "layerBodId": "Messstellen",
                     "id": 484
                 }],

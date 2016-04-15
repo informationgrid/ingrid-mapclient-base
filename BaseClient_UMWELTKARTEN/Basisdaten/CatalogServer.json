@@ -13,7 +13,7 @@
                 }, {
                     "category": "layer",
                     "id": 102,
-                    "label": "Grosse Fl¸sse",
+                    "label": "Grosse Fl√ºsse",
                     "layerBodId": "Grosse_FluesseBasis",
                     "staging": "prod"
                 }, {
@@ -97,7 +97,7 @@
                     "staging": "prod"
                 }],
                 "id": 108,
-                "label": "Karten Schwarz-Weiﬂ",
+                "label": "Karten Schwarz-Wei√ü",
                 "selectedOpen": false,
                 "staging": "prod"
             }, {

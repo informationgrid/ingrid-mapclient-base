@@ -33,10 +33,10 @@ TRANSLATE_CSV_FILES ?= "https://docs.google.com/spreadsheets/d/1F3R46w4PODfsbJq7
 TRANSLATE_EMPTY_JSON ?= src/locales/empty.json
 TRANSLATE_OUTPUT ?= src/locales
 DEFAULT_EXTENT ?= '[300000, 5650000, 686000, 6000000]'
-DEFAULT_RESOLUTION ?= 550.0
+DEFAULT_RESOLUTION ?= 500.0
 DEFAULT_LEVEL_OF_DETAIL ?= 7 #level of detail for the default resolution
 RESOLUTIONS ?= '[1000.0, 750.0, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0, 2.5, 2.0, 1.0, 0.5, 0.25, 0.1]'
-LEVEL_OF_DETAILS ?= '[6, 7, 8, 9, 10, 11, 12, 13, 14, 14, 16, 17, 18, 18]' #lods corresponding to resolutions
+LEVEL_OF_DETAILS ?= '[4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 14, 16, 17, 18, 18]' #lods corresponding to resolutions
 DEFAULT_EPSG ?= EPSG:25832
 DEFAULT_EPSG_EXTEND ?= '[300000, 5650000, 686000, 6000000]'
 DEFAULT_ELEVATION_MODEL ?= COMB
@@ -275,6 +275,9 @@ prd/lib/build.js: src/lib/jquery-2.0.3.min.js \
 		    src/lib/proj4js-compressed.js \
 		    src/lib/EPSG25832.js \
 		    src/lib/EPSG21781.js \
+		    src/lib/EPSG2056.js \
+		    src/lib/EPSG32631.js \
+		    src/lib/EPSG32632.js \
 		    src/lib/ol3cesium.js \
 		    src/lib/angular-translate.min.js \
 		    src/lib/angular-translate-loader-static-files.min.js \
