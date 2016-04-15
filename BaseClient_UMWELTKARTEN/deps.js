@@ -94,8 +94,6 @@ goog.addDependency('components/share/ShareModule.js', ['ga_share'], ['ga_share_d
 goog.addDependency('components/slider/SliderDirective.js', ['ga_slider_directive'], ['ga_debounce_service'], false);
 goog.addDependency('components/swipe/SwipeDirective.js', ['ga_swipe_directive'], ['ga_debounce_service', 'ga_map_service'], false);
 goog.addDependency('components/swipe/SwipeModule.js', ['ga_swipe'], ['ga_swipe_directive'], false);
-//goog.addDependency('components/tilt3d/Tilt3dDirective.js', ['ga_tilt3d_directive'], [], false);
-//goog.addDependency('components/tilt3d/Tilt3dModule.js', ['ga_tilt3d'], ['ga_tilt3d_directive'], false);
 goog.addDependency('components/timeselector/TimeSelectorDirective.js', ['ga_timeselector_directive'], ['ga_browsersniffer_service', 'ga_debounce_service', 'ga_map_service', 'ga_slider_directive', 'ga_time_service'], false);
 goog.addDependency('components/timeselector/TimeSelectorModule.js', ['ga_timeselector'], ['ga_time_service', 'ga_timeselector_directive'], false);
 goog.addDependency('components/timeselector/TimeService.js', ['ga_time_service'], ['ga_permalink_service'], false);
