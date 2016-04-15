@@ -17,19 +17,19 @@ itemscope itemtype="http://schema.org/WebApplication"
 % endif
     <meta charset="utf-8"/>
     <!-- verification for google webmaster tools -->
-    <meta name="google-site-verification" content="ZAmW5d4_2X8xb5Yy_nYQbnTSe1EIeSqyhox9aXXwrws"/>
+<!--    <meta name="google-site-verification" content="ZAmW5d4_2X8xb5Yy_nYQbnTSe1EIeSqyhox9aXXwrws"/>-->
     <!-- verification for bing webmaster tools -->
-    <meta name="msvalidate.01" content="58E0E0B7DD4AB3D30EE315C695950E68"/>
+<!--    <meta name="msvalidate.01" content="58E0E0B7DD4AB3D30EE315C695950E68"/>-->
     <!-- verification for yandex webmaster tools -->
-    <meta name='yandex-verification' content='4795f82c05657028'/>
+    <!--<meta name='yandex-verification' content='4795f82c05657028'/>-->
     <!-- this tag enables the search bot forwarding to _escaped_fragment_= urls for SEO. It can be used instead of the ugly hasbang -->
     <meta name="fragment" content="!"/>
 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, minimal-ui"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta name="application-name" content="map.geo.admin.ch"/>
-    <meta name="msapplication-TileImage" content="${versionslashed}img/touch-icon-bund-144x144.png"/>
+    <meta name="application-name" content="Umweltkarten"/>
+    <meta name="msapplication-TileImage" content="img/muHeader.png"/>
     <meta name="msapplication-TileColor" content="#ffffff"/>
     <meta name="msapplication-square70x70logo" content="${versionslashed}img/touch-icon-bund-70x70.png"/>
     <meta name="msapplication-square150x150logo" content="${versionslashed}img/touch-icon-bund-150x150.png"/>
@@ -103,7 +103,7 @@ itemscope itemtype="http://schema.org/WebApplication"
       })();
     </script>
     <link href="${versionslashed}style/app.css" rel="stylesheet"/>
-    <link rel="shortcut icon" type="image/x-icon" href="${versionslashed}img/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
   </head>
 
   <body class="{{topicId}}" 
@@ -662,6 +662,7 @@ itemscope itemtype="http://schema.org/WebApplication"
     <script src="lib/typeahead-0.9.3.js"></script>
     <script src="lib/proj4js-compressed.js"></script>
     <script src="lib/EPSG25832.js"></script>
+    <script src="lib/EPSG21781.js"></script>
     <script src="lib/fastclick.js"></script>
     <script src="lib/localforage.js"></script>
     <script src="lib/filesaver.js"></script>
@@ -763,7 +764,7 @@ itemscope itemtype="http://schema.org/WebApplication"
           gaLayersProvider.wmtsGetTileUrlTemplate = '//wmts{s}.geo.admin.ch/1.0.0/{Layer}/default/{Time}/{TileMatrixSet}/{z}/{y}/{x}.{Format}';
           gaLayersProvider.wmtsMapProxyGetTileUrlTemplate = '//wmts{s}.geo.admin.ch/1.0.0/{Layer}/default/{Time}/{TileMatrixSet}/{z}/{x}/{y}.{Format}';
           gaLayersProvider.terrainTileUrlTemplate = '//3d.geo.admin.ch/1.0.0/{Layer}/default/{Time}/4326';
-          gaLayersProvider.layersConfigUrlTemplate = gaGlobalOptions.resourceUrl + 'layersConfig.jsonlang={Lang}';
+          gaLayersProvider.layersConfigUrlTemplate = gaGlobalOptions.resourceUrl + 'layersConfig.json?lang={Lang}';
           gaLayersProvider.legendUrlTemplate = gaGlobalOptions.apiUrl + '/rest/services/all/MapServer/{Layer}/legend?lang={Lang}';
         });
         module.config(function(gaTopicProvider, gaGlobalOptions) {

@@ -42,37 +42,33 @@
                                     <filtering>true</filtering>
                                     <excludes>
                                         <exclude>**/*.xml</exclude>
-<!--                                        <exclude>**/*.json</exclude>
-                                        <exclude>Basisdaten/*</exclude>
+                                        <exclude>Makefile</exclude>
+<!--                                        <exclude>Basisdaten/*</exclude>
                                         <exclude>Hydrologie/*</exclude>-->
                                     </excludes>
                                 </resource>
                             </resources>              
                         </configuration>            
                     </execution>
-<!--                    <execution>
+                    <execution>
                         <id>copy-resources-2</id>
                         <phase>initialize</phase>
                         <goals>
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>../mf-geoadmin3/src</outputDirectory>
+                            <outputDirectory>../mf-geoadmin3</outputDirectory>
                             <resources>          
                                 <resource>
                                     <directory>.</directory>
                                     <filtering>true</filtering>
                                     <includes>
-                                        <include>*.json</include>
-                                        <include>*.html</include>
-                                        <include>*.appcache</include>
-                                        <include>Basisdaten/*</include>
-                                        <include>Hydrologie/*</include>
+                                        <include>Makefile</include>
                                     </includes>
                                 </resource>
                             </resources>              
                         </configuration>            
-                    </execution>-->
+                    </execution>
                     <execution>
                         <id>copy-resources-3</id>
                         <phase>initialize</phase>
