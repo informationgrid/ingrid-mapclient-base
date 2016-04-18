@@ -169,7 +169,7 @@ Die allgemeinen Anpassungen für beide Varianten des BasisClienten sind im Verze
     * Aufstellung aller im Viewer genutzten Layer mit ihren Eigenschaften
 
 * Makefile
-    * Konfiguration auf die Domain www.umweltkarten-niedersachsen.de
+    * Konfiguration auf die Domain des jeweiligen Profils
 
 * services.json
     * Zuordung der Hintergrundkarten zu den Themen
