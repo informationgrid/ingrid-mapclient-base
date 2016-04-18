@@ -100,7 +100,7 @@ Für den BasisClient ohne die original SDI (Spatial Data Infrastructure) sind ei
 
 #### Integration in den Build-Prozess
 
-Die für den BasisClient notwendigen Änderungen sind in den Verzeichnissen baseClient_NUMIS und baseClient_Umweltkarten vorgehalten. Vor dem Build-Lauf werden die entsprechenden Dateien im ausgecheckten original Sourcen des Submoduls ersetzt. Dies erfolgt mittels eines maven-Scriptes.
+Die für den BasisClient notwendigen Änderungen sind in den Verzeichnissen BaseClient_NUMIS und BaseClient_Umweltkarten vorgehalten. Vor dem Build-Lauf werden die entsprechenden Dateien im Verzeichnis BaseClient_COMMON mit den dort vorhanden allgemeinen Änderungen gemerged. Nun werden diese gesamten Änderungen in den ausgecheckten original Sourcen des Submoduls ersetzt. Dies erfolgt mittels eines maven-Scriptes.
 
 #### Grafikdateien
 
