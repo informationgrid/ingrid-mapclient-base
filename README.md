@@ -72,15 +72,74 @@ Checkout:
 
     $ git clone https://github.com/informationgrid/ingrid-mapclient-base.git
 
-Build:
+Run Maven:
 
-    make dev
-    make prod
+    $ mvn initialize compile -P<Profile>
+
+Deploy:
+
+    Aus dem Verzeichnis mf-geoadmin3/src den Entwicklungsstand oder aus dem Verzeichnis mf-geoadmin3/prd den produktiven Viewer dem WebServer der eingenen Domain zur Auslieferung bereitstellen.
 
 ### Source-Code
 #### Anpassung am Source-Code
 
-Für den BasisClient ohne die original SDI (Spatial Data Infrastructure) sind einige Anpassungen vor zu nehmen. Diese werden in der folgenden Liste dokumentiert.
+Für den BasisClient ohne die original SDI (Spatial Data Infrastructure) sind basierend auf dem Submodule 1014736 des mf-geoadmin3 einige Anpassungen vor zu nehmen. Diese sind in den folgenden Listen dokumentiert.
+
+##### Allgemeine Anpassungen
+
+Die allgemeinen Anpassungen für beide Varianten des BasisClienten sind im Verzeichnis BaseClient_COMMON zu finden. Es sind im einzelnen:
+
+* components/
+    * catalogtree/example/index.html
+        * Anpassen der Projektionsvorschrift für das BasisKoordinatensystem
+    * featuretree/example/index.html
+        * Anpassen der Projektionsvorschrift für das BasisKoordinatensystem
+    * importkml/example/index.html
+        * Anpassen der Projektionsvorschrift für das BasisKoordinatensystem
+    * importwms/example/index.html
+        * Anpassen der Projektionsvorschrift für das BasisKoordinatensystem
+    * map/example/index.html
+        * Anpassen der Projektionsvorschrift für das BasisKoordinatensystem
+    * profile/example/index.html
+        * Anpassen der Projektionsvorschrift für das BasisKoordinatensystem
+
+* lib/EPSG25832.js
+    * Projektionsvorschrift für das BasisKoordinatensystem
+
+##### Anpassungen für den BasisClienten Umweltkarten
+
+* Basisdaten/CatalogServer.sjon
+    * Liste der Layer, die zu dem Thema Basisdaten verfügbar sind
+
+* components/
+    * backgroundselector/
+        * style/
+            * backgroundselector.less
+                * Aufnahme der Thumbnails für die jeweiligen Hintergrundkarten
+            * JPG-Dateien
+                * Thumbnails für die jeweilige Hintergrundkarte
+        * BackgroundService.js
+            * Eintragen der gewünschten Hintergrundkarten
+    * importwms/
+        * ImportWmsDirektive.js
+            * WMSVersion
+    * map/
+        * MapService.js
+            * Ursprung für die Map
+            * defaultResolutions
+            * SpatialReference der WMS-Layer
+
+* Hydrologie/CatalogServer.sjon
+    * Liste der Layer, die zu dem Thema Basisdaten verfügbar sind
+
+* img/
+    * basemap/
+        * JPG-Dateien
+            * Thumbnails für die jeweilige Hintergrundkarte
+    * favicon.png
+        * Grafik, die im Browertab und/oder der URL-Zeile angezeigt wird
+    * muHeader.png
+        * Grafik im Kopfbereich der Anwendung
 
 * js/CatalogtreeController.js
     * Anpassen des Zugriffs auf den CatalogServer zur Auslieferung der Konfiguration zu einem Thema
@@ -88,54 +147,35 @@ Für den BasisClient ohne die original SDI (Spatial Data Infrastructure) sind ei
 * js/ImportWmsController.js
     * Liste mit den gewünschten externen WMS-Diensten
 
-* js/TranslationController.js
-    * Angabe der zur Verfügung gestellten Sprache, diese muss mit den Vorgaben im Makefile übereinstimmen
+* lib/ol3cesium-debug.js
+    * DEFAULT_WMS_VERSION
 
-* /js/SearchController.js
-    * Angabe des Endpunkts für die Suche nach Features und Layern
+* locales/de.json
+    * Anpassung der deutschsprachigen Schriftzüge im Viewer
 
-* components\backgroundselector\BackgroundService.js
-    * Eintragen der gewünschten Hintergrundkarten
+* style/app.less
+    * Anpassen des Links auf die im Kopfbereich angezeigte Grafik
 
+* index.mako.html
+    * Anpassung Seitentitel, Applikationsname, TitleImage, Verknüpfung zum favicon
+    * Zugriffe auf Google-, Bing- und Yandex-Webmaster-Tools auskommentiert
+    * Projektionsvorschriften für schweizer Koordinatensysteme entfernt
+    * Projektionsvorschrift für ETRS98 / UTM zone 32N aufgenommen
+    * Entwicklungsstand 3D deaktiviert
+    * Default-Einstellungen auskommentiert
+    * Zugriffe auf layersConfig.json und services.json konfiguriert
+
+* layersConfig.json
+    * Aufstellung aller im Viewer genutzten Layer mit ihren Eigenschaften
+
+* Makefile
+    * Konfiguration auf die Domain www.umweltkarten-niedersachsen.de
+
+* services.json
+    * Zuordung der Hintergrundkarten zu den Themen
 
 #### Integration in den Build-Prozess
 
-Die für den BasisClient notwendigen Änderungen sind in den Verzeichnissen BaseClient_NUMIS und BaseClient_Umweltkarten vorgehalten. Vor dem Build-Lauf werden die entsprechenden Dateien im Verzeichnis BaseClient_COMMON mit den dort vorhanden allgemeinen Änderungen gemerged. Nun werden diese gesamten Änderungen in den ausgecheckten original Sourcen des Submoduls ersetzt. Dies erfolgt mittels eines maven-Scriptes.
+Die für den BasisClient notwendigen Änderungen sind in den Verzeichnissen BaseClient_NUMIS und BaseClient_Umweltkarten vorgehalten. Vor dem Build-Lauf werden die entsprechenden Dateien im Verzeichnis BaseClient_COMMON mit den dort vorhanden allgemeinen Änderungen zusammengeführt.
+Die gesamten Änderungen werden in den ausgecheckten original Sourcen des Submoduls ersetzt. Dies erfolgt mittels des Maven-Scripts unter Angabe des Profiles Umweltkarten oder Numis.
 
-#### Grafikdateien
-
-Im Verzeichnis img werden die gesamten Grafiken gespeichert. Hier sind die Grafiken auszutauschen bzw. zu speichern , die im BasisClient verwendet werden sollen.
-
-#### Anpassungen am Makefile
-
-Im Folgenden sind die Variablen gelistet, die auf den gewünschten BasisClient angepasst werden müssen.
-
-API_URL
-
-DEFAULT_TOPIC_ID 
-
-LANGUAGES
-
-DEFAULT_EXTENT 
-
-DEFAULT_RESOLUTION
-
-DEFAULT_LEVEL_OF_DETAIL 
-
-RESOLUTIONS 
-
-LEVEL_OF_DETAILS 
-
-DEFAULT_EPSG 
-
-Unter Sprungmarke prd/lib/build.js: sind nur die JavaSript-Bibliotheken einzutragen, die auch im BasisClient verwendet werden sollen.
-
-#### Anpassungen an der index.mako.html
-
-Die Datei befindet sich im Verzeichnis src.
-
-* Anpassen des Title und Applicationname
-
-* Austausch des favicon.ico und der Header-Grafik
-
-* gewünschte EPSP\<wkid\>.js-Bibliotheken für Koordinatendarstellungen in dem jeweiligen Koordinatensystem eintragen
