@@ -95,6 +95,9 @@
                                         <resource>
                                             <directory>BaseClient_UMWELTKARTEN</directory>
                                             <filtering>true</filtering>
+                                            <excludes>
+                                                <exclude>Makefile</exclude>
+                                            </excludes>
                                         </resource>
                                     </resources>              
                                 </configuration>            
@@ -111,9 +114,6 @@
                                         <resource>
                                             <directory>BaseClient_COMMON</directory>
                                             <filtering>true</filtering>
-                                            <excludes>
-                                                <exclude>Makefile</exclude>
-                                            </excludes>
                                         </resource>
                                     </resources>              
                                 </configuration>            
@@ -128,7 +128,7 @@
                                     <outputDirectory>mf-geoadmin3</outputDirectory>
                                     <resources>          
                                         <resource>
-                                            <directory>BaseClient_COMMON</directory>
+                                            <directory>BaseClient_UMWELTKARTEN</directory>
                                             <filtering>true</filtering>
                                             <includes>
                                                 <include>Makefile</include>
