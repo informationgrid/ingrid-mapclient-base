@@ -80,6 +80,8 @@ Deploy:
 
     Aus dem Verzeichnis mf-geoadmin3/src den Entwicklungsstand oder aus dem Verzeichnis mf-geoadmin3/prd den produktiven Viewer dem WebServer der eingenen Domain zur Auslieferung bereitstellen.
 
+[Skizze BUILD-Lauf] (BUILD.md)
+
 ### Source-Code
 #### Anpassung am Source-Code
 
@@ -107,6 +109,8 @@ Die allgemeinen Anpassungen für beide Varianten des BasisClienten sind im Verze
     * Projektionsvorschrift für das BasisKoordinatensystem
 
 ##### Anpassungen für den BasisClienten Umweltkarten
+
+Die Anpassungen für den BasisClienten Umweltkarten sind im Verzeichnis BaseClient_UMWELTKARTEN zu finden. Es sind im einzelnen:
 
 * Basisdaten/CatalogServer.sjon
     * Liste der Layer, die zu dem Thema Basisdaten verfügbar sind
@@ -174,8 +178,10 @@ Die allgemeinen Anpassungen für beide Varianten des BasisClienten sind im Verze
 * services.json
     * Zuordung der Hintergrundkarten zu den Themen
 
+##### Anpassungen für den BasisClienten NUMIS
+
+
 #### Integration in den Build-Prozess
 
-Die für den BasisClient notwendigen Änderungen sind in den Verzeichnissen BaseClient_NUMIS und BaseClient_Umweltkarten vorgehalten. Vor dem Build-Lauf werden die entsprechenden Dateien im Verzeichnis BaseClient_COMMON mit den dort vorhanden allgemeinen Änderungen zusammengeführt.
-Die gesamten Änderungen werden in den ausgecheckten original Sourcen des Submoduls ersetzt. Dies erfolgt mittels des Maven-Scripts unter Angabe des Profiles Umweltkarten oder Numis.
-
+Die für den BasisClient notwendigen Änderungen sind in den Verzeichnissen BaseClient_NUMIS und BaseClient_UMWELTKARTEN gespeichert. Vor dem Build-Lauf werden die Dateien des jeweiligen BasisClienten im Verzeichnis BaseClient_COMMON mit den dort vorhanden allgemeinen Änderungen zusammengeführt.
+Diese gesamten Änderungen werden in den ausgecheckten original Sourcen des Submoduls ersetzt. Dies erfolgt mittels des Maven-Scripts unter Angabe des entsprechenden Profils Umweltkarten oder Numis.
