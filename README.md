@@ -80,16 +80,20 @@ Deploy:
 
     Aus dem Verzeichnis mf-geoadmin3/src den Entwicklungsstand oder aus dem Verzeichnis mf-geoadmin3/prd den produktiven Viewer dem WebServer der eingenen Domain zur Auslieferung bereitstellen.
 
-[Skizze BUILD-Lauf] (BUILD.md)
+[Beschreibung der einzelnen Punkte des BUILD-Laufs] (BUILD.md)
+
+[Skizze des BUILD-Laufs als PDF] (20160419_Build-BasisClient.pdf)
 
 ### Source-Code
 #### Anpassung am Source-Code
 
-Für den BasisClient ohne die original SDI (Spatial Data Infrastructure) sind basierend auf dem Submodule 1014736 des mf-geoadmin3 einige Anpassungen vor zu nehmen. Diese sind in den folgenden Listen dokumentiert.
+In der [Skizze des BUILD-Laufs] (20160419_Build-BasisClient.pdf) werden für das GitHub-Repository **ingrid-mapclient-base** die Verzeichnisse BaseClient_COMMON, BaseClient_UMWELTKARTEN und BaseClient_NUMIS sowie das Submodul **mf-geoadmin3** dargestellt. 
 
-##### Allgemeine Anpassungen
+Für den BasisClient ohne die original SDI (Spatial Data Infrastructure) sind basierend auf dem Submodule mit dem Stand **1014736 des mf-geoadmin3** einige Anpassungen vorzunehmen. Diese sind in den folgenden Listen dokumentiert.
 
-Die allgemeinen Anpassungen für beide Varianten des BasisClienten sind im Verzeichnis BaseClient_COMMON zu finden. Es sind im einzelnen:
+##### Identische Anpassungen für beide Varianten
+
+Die identischen Anpassungen für beide Varianten des BasisClienten sind im Verzeichnis BaseClient_COMMON zu finden. Es sind im Einzelnen:
 
 * components/
     * catalogtree/example/index.html
@@ -110,7 +114,7 @@ Die allgemeinen Anpassungen für beide Varianten des BasisClienten sind im Verze
 
 ##### Anpassungen für den BasisClienten Umweltkarten
 
-Die Anpassungen für den BasisClienten Umweltkarten sind im Verzeichnis BaseClient_UMWELTKARTEN zu finden. Es sind im einzelnen:
+Die Anpassungen für den BasisClienten Umweltkarten sind im Verzeichnis BaseClient_UMWELTKARTEN zu finden. Es sind im Einzelnen:
 
 * Basisdaten/CatalogServer.sjon
     * Liste der Layer, die zu dem Thema Basisdaten verfügbar sind
@@ -161,10 +165,10 @@ Die Anpassungen für den BasisClienten Umweltkarten sind im Verzeichnis BaseClie
     * Anpassen des Links auf die im Kopfbereich angezeigte Grafik
 
 * index.mako.html
-    * Anpassung Seitentitel, Applikationsname, TitleImage, Verknüpfung zum favicon
+    * Anpassung Seitentitel, Applikationsname, TitleImage, Verknüpfung zum Favicon
     * Zugriffe auf Google-, Bing- und Yandex-Webmaster-Tools auskommentiert
     * Projektionsvorschriften für schweizer Koordinatensysteme entfernt
-    * Projektionsvorschrift für ETRS98 / UTM zone 32N aufgenommen
+    * Projektionsvorschrift für ETRS89 / UTM zone 32N aufgenommen
     * Entwicklungsstand 3D deaktiviert
     * Default-Einstellungen auskommentiert
     * Zugriffe auf layersConfig.json und services.json konfiguriert
