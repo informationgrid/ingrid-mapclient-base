@@ -91,7 +91,7 @@
                     "category": "layer",
                     "staging": "prod",
                     "label": "einstweilig gesicherte UESF HB",
-                    "layerBodId": "einstweilig_gesicherte_UESF_-_HB",
+                    "layerBodId": "einstweilig_gesicherte_UESF_HB",
                     "id": 471
                 }],
                 "label": "Überschwemmungsgebiete",
