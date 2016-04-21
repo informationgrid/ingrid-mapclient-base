@@ -1,17 +1,17 @@
 # Mapclient Base
 
 ## Dokumentation
-**[Build-Prozess](#build-prozess)**  
-**[Source-Code](#source-code)**  
+**[Build-Prozess](#build-prozess)**
+**[Source-Code](#source-code)**
 
 ### Build-Prozess
 
 Der Build-Prozess des Projektes **ingrid-mapclient-base** wird anhand eines **Makefile** erstellt. In dieser Datei sind alle Voraussetzungen und Einstellungen für den Mapclient definiert. Zudem ermöglicht es die Definition von verschiedenen Profilen eines Mapclient, z.B. DEV-, PROD-Version.
-Ausgeführt wird das **Makefile** mit dem Unix-Befehl **make**, welches ein Build-Management-Tool ist. In Abhängigkeiten von Bedingungen können mit diesem Befehl verschiedene Build-Prozess aus dem **Makefile** durchgeführt werden, so z.B. ein bestimmtes Profil eines Mapclient bauen, Openlayers aktualisieren, etc.   
+Ausgeführt wird das **Makefile** mit dem Unix-Befehl **make**, welches ein Build-Management-Tool ist. In Abhängigkeiten von Bedingungen können mit diesem Befehl verschiedene Build-Prozess aus dem **Makefile** durchgeführt werden, so z.B. ein bestimmtes Profil eines Mapclient bauen, Openlayers aktualisieren, etc.
 
 #### Systemvoraussetung
 
-Da der Build-Prozess mit dem Unix-Befehl **make** ausgeführt wird, wird auch ein Unix-ähnliches Betriebssystem benötigt. Für Windows kann die Linux-like Umgebung **Cygwin** eine Abhilfe sein. Dieses Tool ermöglicht Unix-Befehle unter Windows auszuführen.  
+Da der Build-Prozess mit dem Unix-Befehl **make** ausgeführt wird, wird auch ein Unix-ähnliches Betriebssystem benötigt. Für Windows kann die Linux-like Umgebung **Cygwin** eine Abhilfe sein. Dieses Tool ermöglicht Unix-Befehle unter Windows auszuführen.
 
 #### Übernahme original Sourcen
 
@@ -59,14 +59,14 @@ Hier einige Beispiele von definierten Variablen, die bei dem Build-Prozess eine 
 
 ###### Integration eigener Komponenten
 
-Um eigene Komponenten in den MapClient zu integrieren, benötigt es den Wert der Variable **SRC_JS_FILES** (siehe unter [Konfigurationen beim Build-Prozess](#konfigurationen-beim-build-prozess)) in der Datei **Makefile** so anzupassen, damit die JavaScript-Dateien in den Build-Prozess integriert sind. 
+Um eigene Komponenten in den MapClient zu integrieren, benötigt es den Wert der Variable **SRC_JS_FILES** (siehe unter [Konfigurationen beim Build-Prozess](#konfigurationen-beim-build-prozess)) in der Datei **Makefile** so anzupassen, damit die JavaScript-Dateien in den Build-Prozess integriert sind.
 Ein Blick auf den Wert der genannten Variable, stellt fest, dass alle Dateien mit der Endung *.js* in den Verzeichnissen *src/components* und *src/js* im Build-Prozess des MapClients integriert werden. Dieser Wert muss so angepasst bzw. erweitert werden, damit auch die eigene Komponenten integriert werden.
 
 ###### Ausschluss von Komponenten
 
 Analog zur Integration eigener Komponenten ist der Ausschluss von Komponenten von der Variable **SRC_JS_FILES** abhängig. Ein Ausschluss von Komponenten ist aber etwas komplizierter, da ggfs. Abhängigkeiten zu anderen Komponenten existieren und referenzierte Komponenten aus der Datei **index.html** entfernt werden müssen.
 
-##### Getting Started 
+##### Getting Started
 
 Checkout:
 
@@ -74,20 +74,20 @@ Checkout:
 
 Run Maven:
 
-    $ mvn initialize compile -P<Profile>
+    $ mvn compile -P<Profile>
 
 Deploy:
 
-    Aus dem Verzeichnis mf-geoadmin3/src den Entwicklungsstand oder aus dem Verzeichnis mf-geoadmin3/prd den produktiven Viewer dem WebServer der eingenen Domain zur Auslieferung bereitstellen.
+    In dem Verzeichnis mf-geoadmin3/src steht die Entwicklungsversion und in dem Verzeichnis mf-geoadmin3/prd steht der produktive Viewer für die Auslieferung auf dem WebServer der eigenen Domain bereit.
 
 [Beschreibung der einzelnen Punkte des BUILD-Laufs] (BUILD.md)
 
-[Skizze des BUILD-Laufs als PDF] (20160419_Build-BasisClient.pdf)
+[Skizze des BUILD-Laufs als PDF] (Build-BasisClient.pdf)
 
 ### Source-Code
 #### Anpassung am Source-Code
 
-In der [Skizze des BUILD-Laufs] (20160419_Build-BasisClient.pdf) werden für das GitHub-Repository **ingrid-mapclient-base** die Verzeichnisse BaseClient_COMMON, BaseClient_UMWELTKARTEN und BaseClient_NUMIS sowie das Submodul **mf-geoadmin3** dargestellt. 
+In der [Skizze des BUILD-Laufs] (Build-BasisClient.pdf) werden für das GitHub-Repository **ingrid-mapclient-base** die Verzeichnisse BaseClient_COMMON, BaseClient_UMWELTKARTEN und BaseClient_NUMIS sowie das Submodul **mf-geoadmin3** dargestellt.
 
 Für den BasisClient ohne die original SDI (Spatial Data Infrastructure) sind basierend auf dem Submodule mit dem Stand **1014736 des mf-geoadmin3** einige Anpassungen vorzunehmen. Diese sind in den folgenden Listen dokumentiert.
 
@@ -157,6 +157,9 @@ Die Anpassungen für den BasisClienten Umweltkarten sind im Verzeichnis BaseClie
 
 * lib/ol3cesium-debug.js
     * DEFAULT_WMS_VERSION
+
+* lib/ol3cesium.js
+	* Ersetzen von 1.3.0 durch 1.1.1, zum Abruf der WMS-Hintergrundkarten in Version 1.1.1
 
 * locales/de.json
     * Anpassung der deutschsprachigen Schriftzüge im Viewer

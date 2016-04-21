@@ -5,10 +5,8 @@
         bottom: unit(@bt-bottom, px);
         overflow: hidden;
         cursor: pointer;
-        position: absolute; 
+        position: absolute;
         background: transparent no-repeat center;
-        /*background: #fff data-uri('bg-layersx2.jpg') no-repeat 0 center;*/
-        /*background-size: 275px 58px;*/
         border: 3px solid;
         .transition-transform(~".5s,  bottom .5s, width .5s");
 
@@ -23,21 +21,26 @@
     }
 
     .ga-bg-layer-bt {
-        z-index: 1005;
+        z-index: 1006;
     }
 
     .ga-bg-layer-0 {
-        z-index: 1004;
+        z-index: 1005;
     }
+
     .ga-bg-layer-1 {
-        z-index: 1003;
+        z-index: 1004;
     }
 
     .ga-bg-layer-2 {
-        z-index: 1002;
+        z-index: 1003;
     }
 
     .ga-bg-layer-3 {
+        z-index: 1002;
+    }
+
+    .ga-bg-layer-4 {
         z-index: 1001;
     }
 
@@ -83,11 +86,11 @@
             margin: 1px;
         }
 
-        .ga-pixelkarte-grau {
+        .ga-TopographieGrau {
             background-position: -118px center;
         }
 
-        .ga-pixelkarte-farbe {
+        .ga-TopographieFarbe {
             background-position: -210px center;
         }
 
@@ -98,12 +101,12 @@
                 -ms-transform: translateY(-49px); /* IE 9*/
             }
 
-            .ga-pixelkarte-farbe {
+            .ga-TopographieFarbe {
                 .translate3d(0, -98px, 0);
                 -ms-transform: translateY(-98px); /* IE 9*/
             }
 
-            .ga-pixelkarte-grau {
+            .ga-TopographieGrau {
                 .translate3d(0, -147px, 0);
                 -ms-transform: translateY(-147px); /* IE 9*/
             }
@@ -129,22 +132,26 @@
             right: unit(@control-btns-right, px);
             border-color: white;
         }
+
         .ga-TopographieFarbe {
-            background-image: url('Topographie_Farbe.jpg');
-        }
-        .ga-TopographieGrau {
-            background-image: url('Topographie_Grau.jpg');
-        }
-        .ga-OrthophotosBG {
-            background-image: url('Orthophoto.jpg');
-        }
-/*        .ga-pixelkarte-farbe {
-            background-position: -185px 0;
+            background-image: data-uri('Topographie_Farbe.jpg');
         }
 
-        .ga-pixelkarte-grau {
-            background-position: -92px 0;
-        }*/
+        .ga-TopographieGrau {
+            background-image: data-uri('Topographie_Grau.jpg');
+        }
+
+        .ga-OrthophotosBG {
+            background-image: data-uri('Orthophoto.jpg');
+        }
+
+        .ga-TK50historisch {
+            background-image: data-uri('TK_50_historisch.jpg');
+        }
+
+	.ga-voidLayer {
+	    background-image: data-uri('voidLayer-rect.png');
+	}
 
         &.ga-open {
 
@@ -161,25 +168,55 @@
                 }
             }
 
-            .ga-swissimage {
+            .ga-TopographieFarbe {
                 .translate3d(-25px, 0 , 0);
                 -ms-transform: translateX(-25px); /* IE 9*/
             }
 
-            .ga-pixelkarte-farbe {
+            .ga-TopographieGrau {
                 .translate3d(-126px, 0 , 0);
                 -ms-transform: translateX(-126px); /* IE 9*/
             }
 
-            .ga-pixelkarte-grau {
-                .translate3d(-227px, 0 , 0);
-                -ms-transform: translateX(-227px); /* IE 9*/
-            }
+	    /*            .ga-OrthophotosBG {
+			    .translate3d(-227px, 0 , 0);
+			    -ms-transform: translateX(-227px); /* IE 9
+			}*/
 
             .ga-voidLayer {
-                .translate3d(-328px, 0 , 0);
-                -ms-transform: translateX(-328px); /* IE 9*/
+                .translate3d(-227px, 0 , 0);
+                -ms-transform: translateX(-227px); /*  IE 9 */
             }
+
+	    /*            .ga-voidLayer {
+			    .translate3d(-328px, 0 , 0);
+			    -ms-transform: translateX(-328px); /* IE 9
+			}*/
+
+	    .ga-bg-layer-0 {
+		right: 35px;
+	    }
+
+	    .ga-bg-layer-1 {
+		right: 136px;
+		@media (max-width: @screen-tablet) {
+		    right: 88px;
+		}
+	    }
+
+	    .ga-bg-layer-2 {
+		right: 237px;
+		@media (max-width: @screen-tablet) {
+		    right: 141px;
+		}
+	    }
+
+	    .ga-bg-layer-3 {
+		right: 338px;
+		@media (max-width: @screen-tablet) {
+		    right: 194px;
+		}
+	    }
         }
     }
 }

@@ -1,9 +1,9 @@
 # BUILD-Lauf BaseClient
 
 Die folgenden Befehle werden für den Buildlauf ausgeführt:
-    
+
     $ git clone https://github.com/informationgrid/ingrid-mapclient-base.git
-    $ mvn initialize compile -P<Variante>
+    $ mvn compile -P<Variante>
 
 Der Buildllauf im Einzelnen:
 
@@ -21,7 +21,8 @@ Der Buildllauf im Einzelnen:
 
 7) Kopieren des Variantenspezifischen Makefiles in das Verzeichnis mf-geoadmin3
 
-8) Ausführen des make-Befehls mit der gewünschten Version des BasisClienten
+8) Ausführen des Befehls "make dev", der die Entwicklungsversion des BasisClienten erstellt
 
+9) Ausführen des Befehls "make prod", der die Produktivversion des BasisClienten erstellt
 
-Die Punkte 2 - 8 werden in dem Maven-Script abgearbeitet.
+Die Punkte 2 - 9 werden in dem Maven-Script abgearbeitet.

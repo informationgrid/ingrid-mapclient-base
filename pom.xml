@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ingrid-mapclient-base</groupId>
     <artifactId>ingrid-mapclient-base</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
     <profiles>
         <profile>
             <id>Umweltkarten</id>
@@ -27,7 +27,7 @@
                                         <argument>init</argument>
                                     </arguments>
                                 </configuration>
-                            </execution>                            
+                            </execution>
                             <execution>
                                 <id>update-GIT-Submodule</id>
                                 <phase>initialize</phase>
@@ -44,7 +44,7 @@
                             </execution>
                             <execution>
                                 <id>make-DEV</id>
-                                <phase>compile</phase>
+                                <phase>generate-sources</phase>
                                 <goals>
                                     <goal>exec</goal>
                                 </goals>
@@ -55,10 +55,10 @@
                                         <argument>dev</argument>
                                     </arguments>
                                 </configuration>
-                            </execution>                            
-<!--                            <execution>
+                            </execution>
+                            <execution>
                                 <id>make-PROD</id>
-                                <phase>build</phase>
+                                <phase>generate-sources</phase>
                                 <goals>
                                     <goal>exec</goal>
                                 </goals>
@@ -69,7 +69,7 @@
                                         <argument>prod</argument>
                                     </arguments>
                                 </configuration>
-                            </execution>-->
+                            </execution>
                         </executions>
                     </plugin>
                     <plugin>
@@ -91,7 +91,7 @@
                                 </goals>
                                 <configuration>
                                     <outputDirectory>BaseClient_COMMON</outputDirectory>
-                                    <resources>          
+                                    <resources>
                                         <resource>
                                             <directory>BaseClient_UMWELTKARTEN</directory>
                                             <filtering>true</filtering>
@@ -99,8 +99,8 @@
                                                 <exclude>Makefile</exclude>
                                             </excludes>
                                         </resource>
-                                    </resources>              
-                                </configuration>            
+                                    </resources>
+                                </configuration>
                             </execution>
                             <execution>
                                 <id>copy-resources-2</id>
@@ -110,13 +110,13 @@
                                 </goals>
                                 <configuration>
                                     <outputDirectory>mf-geoadmin3/src</outputDirectory>
-                                    <resources>          
+                                    <resources>
                                         <resource>
                                             <directory>BaseClient_COMMON</directory>
                                             <filtering>true</filtering>
                                         </resource>
-                                    </resources>              
-                                </configuration>            
+                                    </resources>
+                                </configuration>
                             </execution>
                             <execution>
                                 <id>copy-resources-3</id>
@@ -126,7 +126,7 @@
                                 </goals>
                                 <configuration>
                                     <outputDirectory>mf-geoadmin3</outputDirectory>
-                                    <resources>          
+                                    <resources>
                                         <resource>
                                             <directory>BaseClient_UMWELTKARTEN</directory>
                                             <filtering>true</filtering>
@@ -134,18 +134,18 @@
                                                 <include>Makefile</include>
                                             </includes>
                                         </resource>
-                                    </resources>              
-                                </configuration>            
+                                    </resources>
+                                </configuration>
                             </execution>
                             <execution>
                                 <id>copy-resources-4</id>
-                                <phase>initialize</phase>
+                                <phase>compile</phase>
                                 <goals>
                                     <goal>copy-resources</goal>
                                 </goals>
                                 <configuration>
                                     <outputDirectory>mf-geoadmin3/prd</outputDirectory>
-                                    <resources>          
+                                    <resources>
                                         <resource>
                                             <directory>BaseClient_COMMON</directory>
                                             <filtering>true</filtering>
@@ -155,8 +155,8 @@
                                                 <include>Hydrologie/*</include>
                                             </includes>
                                         </resource>
-                                    </resources>              
-                                </configuration>            
+                                    </resources>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
