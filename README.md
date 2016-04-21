@@ -98,14 +98,19 @@ Die identischen Anpassungen für beide Varianten des BasisClienten sind im Verze
 * components/
     * catalogtree/example/index.html
         * Anpassen der Projektionsvorschrift für das BasisKoordinatensystem
+
     * featuretree/example/index.html
         * Anpassen der Projektionsvorschrift für das BasisKoordinatensystem
+
     * importkml/example/index.html
         * Anpassen der Projektionsvorschrift für das BasisKoordinatensystem
+
     * importwms/example/index.html
         * Anpassen der Projektionsvorschrift für das BasisKoordinatensystem
+
     * map/example/index.html
         * Anpassen der Projektionsvorschrift für das BasisKoordinatensystem
+
     * profile/example/index.html
         * Anpassen der Projektionsvorschrift für das BasisKoordinatensystem
 
@@ -124,13 +129,13 @@ Die Anpassungen für den BasisClienten Umweltkarten sind im Verzeichnis BaseClie
         * style/
             * backgroundselector.less
                 * Aufnahme der Thumbnails für die jeweiligen Hintergrundkarten
-            * JPG-Dateien
+            * PNG-Dateien
                 * Thumbnails für die jeweilige Hintergrundkarte
-        * BackgroundService.js
-            * Eintragen der gewünschten Hintergrundkarten
+
     * importwms/
         * ImportWmsDirektive.js
             * WMSVersion
+
     * map/
         * MapService.js
             * Ursprung für die Map
@@ -141,11 +146,9 @@ Die Anpassungen für den BasisClienten Umweltkarten sind im Verzeichnis BaseClie
     * Liste der Layer, die zu dem Thema Basisdaten verfügbar sind
 
 * img/
-    * basemap/
-        * JPG-Dateien
-            * Thumbnails für die jeweilige Hintergrundkarte
     * favicon.png
         * Grafik, die im Browertab und/oder der URL-Zeile angezeigt wird
+
     * muHeader.png
         * Grafik im Kopfbereich der Anwendung
 
