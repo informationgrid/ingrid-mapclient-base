@@ -71,7 +71,7 @@ Analog zur Integration eigener Komponenten ist der Ausschluss von Komponenten vo
 
 ###### Aktualsierung von MF-GEOADMIN3
 
-Bei einer Aktualisierung des Submoduls *mf-geoadmin3* muss geprüft werden, ob überschriebene Sourcen (siehe unter [Änderungen an den Sourcen]) sich im Submodul geändert haben. Wurden Sourcen aktualisiert, so muss ein Merge-Prozess stattfinden und die Änderungen in den überschriebenen Sourcen nachgezogen werden. 
+Bei einer Aktualisierung des Submoduls *mf-geoadmin3* muss geprüft werden, ob überschriebene Sourcen (siehe unter [Änderungen an den Sourcen](#Änderungen-an-den-sourcen)) sich im Submodul geändert haben. Wurden Sourcen aktualisiert, so muss ein Merge-Prozess stattfinden und die Änderungen in den überschriebenen Sourcen nachgezogen werden. 
 
 
 ##### Getting Started
