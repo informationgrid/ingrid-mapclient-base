@@ -9,21 +9,24 @@
 Der Build-Prozess des Projektes **ingrid-mapclient-base** wird anhand eines **Makefile** erstellt. In dieser Datei sind alle Voraussetzungen und Einstellungen für den Mapclient definiert. Zudem ermöglicht es die Definition von verschiedenen Profilen eines Mapclient, z.B. DEV-, PROD-Version.
 Ausgeführt wird das **Makefile** mit dem Unix-Befehl **make**, welches ein Build-Management-Tool ist. In Abhängigkeiten von Bedingungen können mit diesem Befehl verschiedene Build-Prozess aus dem **Makefile** durchgeführt werden, so z.B. ein bestimmtes Profil eines Mapclient bauen, Openlayers aktualisieren, etc.
 
-#### Systemvoraussetung
+#### Systemanforderung
 
 Da der Build-Prozess mit dem Unix-Befehl **make** ausgeführt wird, wird auch ein Unix-ähnliches Betriebssystem benötigt. Für Windows kann die Linux-like Umgebung **Cygwin** eine Abhilfe sein. Dieses Tool ermöglicht Unix-Befehle unter Windows auszuführen.
+Zusätzlich müssen die Build-Tools 'Node' (https://nodejs.org/en/) und 'npm' (https://www.npmjs.com/) auf dem System installiert sein. Diese Tools werden aus dem Makefile gerufen.
+
+#### Änderungen an den Sourcen
+
+Der Mapclient **ingrid-mapclient-base** basiert auf dem Schweizer-Mapclient **mf-geoadmin3** (https://github.com/geoadmin/mf-geoadmin3). Hierfür wird ein Submodul mit einem gewissen Stand des Projektes **mf-geoadmin3** integriert und dient als Grundlage.
+
+Da dieser nicht 1:1 übernommen werden kann, weil der Schweizer-Mapclient auf Schweizer-Bedürfnisse abgestimmt ist und/oder Erweiterungen benötigen werden, werden Änderungen an dem Schweizer-Mapclient außerhalb des Submoduls hinterlegt. Dabei werden die Sourcen kopiert, auf eigene Bedürfnisse bearbeitet und beim Build-Prozess im Submodul überschrieben.
 
 #### Übernahme original Sourcen
 
-Der Mapclient **ingrid-mapclient-base** basiert auf dem Mapclient **mf-geoadmin3** (https://github.com/geoadmin/mf-geoadmin3). Da dieser nicht 1:1 übernommen werden kann, weil dieser auf deren Bedürfnisse abgestimmt ist oder Erweiterungen benötigen werden, muss der Prozess der Source-Übernahme aus dem **mf-geoadmin3** in Betracht genommen werden.
-
-Hierfür wird in diesem Projekt **ingrid-mapclient-base** ein Submodul mit einem gewissen Stand des Projektes **mf-geoadmin3** integriert.
-
-Beim Build-Prozess des Projektes muss eine Überführung der Originalen Sourcen aus dem **mf-geoadmin3** gewährleistet sein, da einige Sourcen für den **ingrid-mapclient-base** nicht angefasst werden müssen und so übernommen werden können.
+Beim Build-Prozess des Projektes muss eine Überführung der Originalen Sourcen aus dem **mf-geoadmin3** gewährleistet sein. Die Sourcen, die für die eigenen Anforderungen angepasst werden müssen, werden in dem Submodul überschrieben. Die unbearbeiteten Dateien bleiben somit erhalten und werden somit übernommen.
 
 ##### Anpassungsmöglichkeiten Build-Prozess
 
-Über die Datei **Makefile** ist eine flexible Ausführung des Build-Prozesses möglich. Hier können Variable definiert werden, die zum Bauen des Mapclients relevant sind, d.h. Definition von JavaScript-Dateien, OpenLayers3-Version, initiale Einstellung für die Karten-Darstellung, usw.. Weitere Möglichkeiten des Build-Prozesses bestehen darin Optionen für den Befehl *make* zu erstellen. So ist es beim *mf-geoadmin* möglich, verschiedene Build-Prozesse anzustoßen, z.B.
+Über die Datei **Makefile** ist eine flexible Ausführung des Build-Prozesses möglich. Hier können Variablen definiert werden, die zum Bauen des Mapclients relevant sind, d.h. Definition von JavaScript-Dateien, OpenLayers3-Version, initiale Einstellung für die Karten-Darstellung, usw.. Weitere Möglichkeiten des Build-Prozesses bestehen darin Optionen für den Befehl *make* zu erstellen. So ist es beim *mf-geoadmin* möglich, verschiedene Build-Prozesse anzustoßen, z.B.
 
 * Erstellung einer PROD-Version, wobei Dateien kompiliert werden. (make prod)
 * Erstellung einer DEV-Version, wobei Dateien nicht kompiliert werden. (make dev)
@@ -65,6 +68,11 @@ Ein Blick auf den Wert der genannten Variable, stellt fest, dass alle Dateien mi
 ###### Ausschluss von Komponenten
 
 Analog zur Integration eigener Komponenten ist der Ausschluss von Komponenten von der Variable **SRC_JS_FILES** abhängig. Ein Ausschluss von Komponenten ist aber etwas komplizierter, da ggfs. Abhängigkeiten zu anderen Komponenten existieren und referenzierte Komponenten aus der Datei **index.html** entfernt werden müssen.
+
+###### Aktualsierung von MF-GEOADMIN3
+
+Bei einer Aktualisierung des Submoduls *mf-geoadmin3* muss geprüft werden, ob überschriebene Sourcen (siehe unter [Änderungen an den Sourcen]) sich im Submodul geändert haben. Wurden Sourcen aktualisiert, so muss ein Merge-Prozess stattfinden und die Änderungen in den überschriebenen Sourcen nachgezogen werden. 
+
 
 ##### Getting Started
 
