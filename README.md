@@ -4,25 +4,27 @@
 **[Build-Prozess](#build-prozess)**
 **[Source-Code](#source-code)**
 
+### Vorwort
+
+Das Projekt **ingrid-mapclient-base** basiert auf den Schweizer-Mapclient **mf-geoadmin3** (https://github.com/geoadmin/mf-geoadmin3). Dieser Schweizer-Mapclient dient zu Grundlage und ist in diesem Projekt als Submodul enthalten.
+
 ### Build-Prozess
 
-Der Build-Prozess des Projektes **ingrid-mapclient-base** wird anhand eines **Makefile** erstellt. In dieser Datei sind alle Voraussetzungen und Einstellungen für den Mapclient definiert. Zudem ermöglicht es die Definition von verschiedenen Profilen eines Mapclient, z.B. DEV-, PROD-Version.
-Ausgeführt wird das **Makefile** mit dem Unix-Befehl **make**, welches ein Build-Management-Tool ist. In Abhängigkeiten von Bedingungen können mit diesem Befehl verschiedene Build-Prozess aus dem **Makefile** durchgeführt werden, so z.B. ein bestimmtes Profil eines Mapclient bauen, Openlayers aktualisieren, etc.
+Der Build-Prozess des Projektes **ingrid-mapclient-base** wird anhand des Build-Tools **Maven** durchgeführt. Über Maven wird definiert, welche Befehle ausgeführt werden sollen, d.h Kopieren von benötigten/geänderten Sourcen, Bauen des Mapclient selbst über das Submodul usw.. Für das Bauen des Mapclients löst Maven ein Unix-Befehl **make** aus und ruft die Datei **Makefile** im Submodul auf. In dieser Datei sind alle Voraussetzungen und Einstellungen für den Mapclient definiert. Es ermöglicht auch die Definition von verschiedenen Profilen eines Mapclient, z.B. DEBUG-, LIVE-Version.
+In Abhängigkeiten von Bedingungen können mit diesem Befehl verschiedene Build-Prozess aus dem **Makefile** durchgeführt werden, so z.B. ein bestimmtes Profil eines Mapclient bauen, Openlayers aktualisieren, etc.
 
 #### Systemanforderung
 
-Da der Build-Prozess mit dem Unix-Befehl **make** ausgeführt wird, wird auch ein Unix-ähnliches Betriebssystem benötigt. Für Windows kann die Linux-like Umgebung **Cygwin** eine Abhilfe sein. Dieses Tool ermöglicht Unix-Befehle unter Windows auszuführen.
-Zusätzlich müssen die Build-Tools 'Node' (https://nodejs.org/en/) und 'npm' (https://www.npmjs.com/) auf dem System installiert sein. Diese Tools werden aus dem Makefile gerufen.
+Für den Build-Prozess muss Maven auf dem System installiert sein. Durch die Ausführung von verschiedenen Unix-Befehle über Maven wird ein  Unix-ähnliches Betriebssystem benötigt. Für Windows kann die Linux-like Umgebung **Cygwin** eine Abhilfe sein. Dieses Tool ermöglicht Unix-Befehle unter Windows auszuführen.
+Neben Maven benötigt die Systemumgebung auch den UNIX-Befehl **make**, zusätzlich zu den Build-Tools 'Node' (https://nodejs.org/en/) und 'npm' (https://www.npmjs.com/). Diese Tools werden aus dem Makefile aufgerufen.
 
 #### Änderungen an den Sourcen
 
-Der Mapclient **ingrid-mapclient-base** basiert auf dem Schweizer-Mapclient **mf-geoadmin3** (https://github.com/geoadmin/mf-geoadmin3). Hierfür wird ein Submodul mit einem gewissen Stand des Projektes **mf-geoadmin3** integriert und dient als Grundlage.
-
-Da dieser nicht 1:1 übernommen werden kann, weil der Schweizer-Mapclient auf Schweizer-Bedürfnisse abgestimmt ist und/oder Erweiterungen benötigen werden, werden Änderungen an dem Schweizer-Mapclient außerhalb des Submoduls hinterlegt. Dabei werden die Sourcen kopiert, auf eigene Bedürfnisse bearbeitet und beim Build-Prozess im Submodul überschrieben.
+Da der MF-GEOADMIN3 nicht 1:1 übernommen werden kann, weil dieser sehr auf Schweizer-Bedürfnisse abgestimmt ist und/oder Erweiterungen benötigen werden müssen Änderungen an den Source-Code durchgeführt werden. Werden Änderungen an einer Datei benötigt, so wird die Datei außerhalb des Submoduls kopiert, auf eigene Bedürfnisse bearbeitet und beim Build-Prozess über Maven in das Submodul wieder hinein kopiert bzw. überschrieben.
 
 #### Übernahme original Sourcen
 
-Beim Build-Prozess des Projektes muss eine Überführung der Originalen Sourcen aus dem **mf-geoadmin3** gewährleistet sein. Die Sourcen, die für die eigenen Anforderungen angepasst werden müssen, werden in dem Submodul überschrieben. Die unbearbeiteten Dateien bleiben somit erhalten und werden somit übernommen.
+Da beim Build-Prozess über Maven alle zu ändernde Source in das Submodul hineinkopiert werden und das Submodul selbst auch den eigentlichen MapClient erstellt, ist die Übernahme der originalen Sourcen gewährleistet. Die Sourcen, die für die eigenen Anforderungen angepasst werden müssen, werden in dem Submodul überschrieben und die restliche Sourcen bleiben im originalen Zustand.
 
 ##### Anpassungsmöglichkeiten Build-Prozess
 
@@ -31,6 +33,8 @@ Beim Build-Prozess des Projektes muss eine Überführung der Originalen Sourcen 
 * Erstellung einer PROD-Version, wobei Dateien kompiliert werden. (make prod)
 * Erstellung einer DEV-Version, wobei Dateien nicht kompiliert werden. (make dev)
 * OL3 inkl. Cesium aktualisiern. (make ol3cesium)
+
+Zudem ist es auch möglich über das Setzen von Umgebungsvariablen in der Systemumgebung (durch 'export ...') auf Variablen im Makefile Einfluss zu nehmen und dies auf eigene Anfordungen zu ändern.
 
 ###### Konfigurationen beim Build-Prozess
 
@@ -62,8 +66,8 @@ Hier einige Beispiele von definierten Variablen, die bei dem Build-Prozess eine 
 
 ###### Integration eigener Komponenten
 
-Um eigene Komponenten in den MapClient zu integrieren, benötigt es den Wert der Variable **SRC_JS_FILES** (siehe unter [Konfigurationen beim Build-Prozess](#konfigurationen-beim-build-prozess)) in der Datei **Makefile** so anzupassen, damit die JavaScript-Dateien in den Build-Prozess integriert sind.
-Ein Blick auf den Wert der genannten Variable, stellt fest, dass alle Dateien mit der Endung *.js* in den Verzeichnissen *src/components* und *src/js* im Build-Prozess des MapClients integriert werden. Dieser Wert muss so angepasst bzw. erweitert werden, damit auch die eigene Komponenten integriert werden.
+Um eigene Komponenten in den MapClient zu integrieren, muss dafür gesorgt werden, dass die eigenen Komponenten in den Build-Prozess über Maven integriert werden. 
+Ein Blick auf den Wert der Variable **SRC_JS_FILES** (siehe unter [Konfigurationen beim Build-Prozess](#konfigurationen-beim-build-prozess)) in der Datei **Makefile**, stellt fest, dass alle Dateien mit der Endung *.js* in den Verzeichnissen *src/components* und *src/js* im Build-Prozess des Submoduls integriert werden. Dieser Wert muss so angepasst bzw. erweitert werden, damit auch die eigene Komponenten integriert werden oder über Maven dafür sorgen, dass die eigenen Komponenten in den definierte Verzeichnisse unter **SRC_JS_FILES** hinein kopiert werden.
 
 ###### Ausschluss von Komponenten
 
@@ -72,7 +76,6 @@ Analog zur Integration eigener Komponenten ist der Ausschluss von Komponenten vo
 ###### Aktualsierung von MF-GEOADMIN3
 
 Bei einer Aktualisierung des Submoduls *mf-geoadmin3* muss geprüft werden, ob überschriebene Sourcen (siehe unter [Änderungen an den Sourcen](#Änderungen-an-den-sourcen)) sich im Submodul geändert haben. Wurden Sourcen aktualisiert, so muss ein Merge-Prozess stattfinden und die Änderungen in den überschriebenen Sourcen nachgezogen werden. 
-
 
 ##### Getting Started
 
