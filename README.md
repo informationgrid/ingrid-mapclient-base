@@ -1,12 +1,16 @@
 # Mapclient Base
 
 ## Dokumentation
-**[Build-Prozess](#build-prozess)**
-**[Source-Code](#source-code)**
 
 ### Vorwort
 
-Das Projekt **ingrid-mapclient-base** basiert auf den Schweizer-Mapclient **mf-geoadmin3** (https://github.com/geoadmin/mf-geoadmin3). Dieser Schweizer-Mapclient dient zu Grundlage und ist in diesem Projekt als Submodul enthalten.
+Das Projekt **ingrid-mapclient-base** basiert auf den Schweizer-Mapclient **mf-geoadmin3** (https://github.com/geoadmin/mf-geoadmin3). Dieser Schweizer-Mapclient dient zu Grundlage und ist in diesem Projekt zu einem bestimmten Zustand als Submodul enthalten. 
+Der Basis-Mapclient soll, im Gegensatz zum Schweizer-Mapclient, eine flexible Kartengestaltung vorweisen, d.h. Projektionen, Karten-Extent, Laden von externen Diensten, usw. sollen nicht nur auf die Schweiz beschränkt sein, sondern auch außerhalb der Schweiz (z.B. Deutschland, Europa, Weltweit) interagieren können. 
+Da **mf-geoadmin3** nur auf die Schweiz abgestimmt ist und in den Sourcen einiges Hardcodiert ist, sind einige Änderungen am Source-Code notwendig.  
+
+**[Build-Prozess](#build-prozess)**
+
+**[Source-Code](#source-code)**
 
 ### Build-Prozess
 
