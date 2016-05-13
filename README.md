@@ -4,13 +4,9 @@
 
 ### Vorwort
 
-Das Projekt **ingrid-mapclient-base** basiert auf den Schweizer-Mapclient **mf-geoadmin3** (https://github.com/geoadmin/mf-geoadmin3). Dieser Schweizer-Mapclient dient zu Grundlage und ist in diesem Projekt zu einem bestimmten Zustand als Submodul enthalten. 
-Der Basis-Mapclient soll, im Gegensatz zum Schweizer-Mapclient, eine flexible Kartengestaltung ermöglichen, d.h. Projektionen, Karten-Extent, Laden von externen Diensten, usw. sollen nicht nur auf die Schweiz beschränkt sein, sondern auch außerhalb der Schweiz (z.B. Deutschland, Europa, Weltweit) interagieren können. 
-Da **mf-geoadmin3** nur auf die Schweiz abgestimmt ist und in den Sourcen einiges Hardcodiert ist, sind einige Änderungen am Source-Code notwendig um einen flexiblen Mapclient zu gestalten. Dadurch ist für den **ingrid-mapclient-base** der Ansatz sich auf einen bestimmten Zustand des **mf-geoadmin3** festzulegen und dort nach eigenen Anforderungen Änderungen durchzuführen.   
-
-**[Build-Prozess](#build-prozess)**
-
-**[Source-Code](#source-code)**
+Das Projekt **ingrid-mapclient-base** basiert auf den Schweizer-Mapclient **MF-GEOADMIN3** (https://github.com/geoadmin/mf-geoadmin3). Dieser Mapclient dient als Grundlage und ist in diesem Projekt in einem bestimmten Zustand als Submodul enthalten. 
+Der Basis-Mapclient soll, im Gegensatz zu mf-geoadmin3, eine flexible Kartengestaltung ermöglichen, d.h. Projektionen, Karten-Extent, Laden von externen Diensten, usw. sollen nicht nur auf die Schweiz beschränkt sein, sondern auch außerhalb der Schweiz (z.B. Deutschland, Europa, Weltweit) funktionieren. 
+Viele Aspekte im MF-GEOADMIN3 sind auf die Schweiz abgestimmt und "hard coded". Es sind daher einige Änderungen am Source-Code notwendig um den Bezug auf die Schweiz aufzubrechen. Um den SourceCode des **ingrid-mapclient-base** zu stabilisieren, bezieht sich der Client auf einen bestimmten Zustand des MF-GEOADMIN3. Auf Basis dieses Zustandes werden die notwendigen Änderungen durchgeführt.   
 
 ### Build-Prozess
 
@@ -19,20 +15,20 @@ In Abhängigkeiten von Bedingungen können mit diesem Befehl verschiedene Build-
 
 #### Systemanforderung
 
-Für den Build-Prozess muss Maven auf dem System installiert sein. Durch die Ausführung von verschiedenen Unix-Befehle über Maven wird ein  Unix-ähnliches Betriebssystem benötigt. Für Windows kann die Linux-like Umgebung **Cygwin** eine Abhilfe sein. Dieses Tool ermöglicht Unix-Befehle unter Windows auszuführen.
+Für den Build-Prozess muss Maven auf dem System installiert sein. Durch die Ausführung von verschiedenen Unix-Befehle über Maven wird ein Unix-ähnliches Betriebssystem benötigt. Für Windows kann die Linux-like Umgebung **Cygwin** eine Abhilfe sein. Dieses Tool ermöglicht Unix-Befehle unter Windows auszuführen.
 Neben Maven benötigt die Systemumgebung auch den UNIX-Befehl **make**, zusätzlich zu den Build-Tools 'Node' (https://nodejs.org/en/) und 'npm' (https://www.npmjs.com/). Diese Tools werden aus dem Makefile aufgerufen.
 
 #### Änderungen an den Sourcen
 
-Da der MF-GEOADMIN3 nicht 1:1 übernommen werden kann, weil dieser sehr auf Schweizer-Bedürfnisse abgestimmt ist und/oder Erweiterungen benötigen werden müssen Änderungen an den Source-Code durchgeführt werden. Werden Änderungen an einer Datei benötigt, so wird die Datei außerhalb des Submoduls kopiert, auf eigene Bedürfnisse bearbeitet und beim Build-Prozess über Maven in das Submodul wieder hinein kopiert bzw. überschrieben.
+Da der MF-GEOADMIN3 nicht 1:1 übernommen werden kann, weil dieser sehr auf Schweizer-Bedürfnisse abgestimmt ist und/oder Erweiterungen benötigen werden, müssen Änderungen an den Source-Code durchgeführt werden. Werden Änderungen an einer Datei benötigt, so wird die Datei außerhalb des Submoduls kopiert, nach eigenen Bedürfnissen bearbeitet und beim Build-Prozess über Maven in das Submodul wieder hinein kopiert bzw. überschrieben.
 
 #### Übernahme original Sourcen
 
-Da beim Build-Prozess über Maven alle zu ändernde Source in das Submodul hineinkopiert werden und das Submodul selbst auch den eigentlichen MapClient erstellt, ist die Übernahme der originalen Sourcen gewährleistet. Die Sourcen, die für die eigenen Anforderungen angepasst werden müssen, werden in dem Submodul überschrieben und die restliche Sourcen bleiben im originalen Zustand.
+Da beim Build-Prozess über Maven alle zu ändernden Sourceb in das Submodul hineinkopiert werden und das Submodul selbst auch den eigentlichen MapClient erstellt, ist die Übernahme der originalen Sourcen gewährleistet. Die Sourcen, die für die eigenen Anforderungen angepasst werden müssen, werden in dem Submodul überschrieben und die restliche Sourcen bleiben im originalen Zustand.
 
 ##### Anpassungsmöglichkeiten Build-Prozess
 
-Über die Datei **Makefile** ist eine flexible Ausführung des Build-Prozesses möglich. Hier können Variablen definiert werden, die zum Bauen des Mapclients relevant sind, d.h. Definition von JavaScript-Dateien, OpenLayers3-Version, initiale Einstellung für die Karten-Darstellung, usw.. Weitere Möglichkeiten des Build-Prozesses bestehen darin Optionen für den Befehl *make* zu erstellen. So ist es beim *mf-geoadmin* möglich, verschiedene Build-Prozesse anzustoßen, z.B.
+Über die Datei **Makefile** ist eine flexible Ausführung des Build-Prozesses möglich. Hier können Variablen definiert werden, die zum Bauen des Mapclients relevant sind, d.h. Definition von JavaScript-Dateien, OpenLayers3-Version, initiale Einstellung für die Karten-Darstellung, usw.. Weitere Möglichkeiten des Build-Prozesses bestehen darin, Optionen für den Befehl *make* zu erstellen. So ist es beim *mf-geoadmin* möglich, verschiedene Build-Prozesse anzustoßen, z.B.
 
 * Erstellung einer PROD-Version, wobei Dateien kompiliert werden. (make prod)
 * Erstellung einer DEV-Version, wobei Dateien nicht kompiliert werden. (make dev)
@@ -70,12 +66,12 @@ Hier einige Beispiele von definierten Variablen, die bei dem Build-Prozess eine 
 
 ###### Integration eigener Komponenten
 
-Um eigene Komponenten in den MapClient zu integrieren, muss dafür gesorgt werden, dass die eigenen Komponenten in den Build-Prozess über Maven integriert werden. 
-Ein Blick auf den Wert der Variable **SRC_JS_FILES** (siehe unter [Konfigurationen beim Build-Prozess](#konfigurationen-beim-build-prozess)) in der Datei **Makefile**, stellt fest, dass alle Dateien mit der Endung *.js* in den Verzeichnissen *src/components* und *src/js* im Build-Prozess des Submoduls integriert werden. Dieser Wert muss so angepasst bzw. erweitert werden, damit auch die eigene Komponenten integriert werden oder über Maven dafür sorgen, dass die eigenen Komponenten in den definierte Verzeichnisse unter **SRC_JS_FILES** hinein kopiert werden.
+Um eigene Komponenten in den MapClient zu integrieren, müssen diese in den maven Buildprozess integriert werden. 
+Ein Blick auf den Wert der Variable **SRC_JS_FILES** (siehe unter [Konfigurationen beim Build-Prozess](#konfigurationen-beim-build-prozess)) in der Datei **Makefile**, zeigt, dass alle Dateien mit der Endung *.js* in den Verzeichnissen *src/components* und *src/js* im Build-Prozess des Submoduls integriert werden. Dieser Wert muss so angepasst bzw. erweitert werden, dass auch die eigene Komponenten integriert werden. Alternativ kann über Maven dafür gesorgt werden, dass die eigenen Komponenten in die definierten Verzeichnisse unter **SRC_JS_FILES** kopiert werden.
 
 ###### Ausschluss von Komponenten
 
-Analog zur Integration eigener Komponenten ist der Ausschluss von Komponenten von der Variable **SRC_JS_FILES** abhängig. Ein Ausschluss von Komponenten ist aber etwas komplizierter, da ggfs. Abhängigkeiten zu anderen Komponenten existieren und referenzierte Komponenten aus der Datei **index.html** entfernt werden müssen.
+Analog zur Integration eigener Komponenten ist der Ausschluss von Komponenten von der Variable **SRC_JS_FILES** abhängig. Beim Ausschluss von Komponenten muss darauf geachtet werden, dass diese ggfs. an anderer Stelle referenziert werden (z.B. in der Datei **index.html**), bzw. andere Komponenten diese voraussetzen.
 
 ###### Aktualsierung von MF-GEOADMIN3
 
@@ -100,9 +96,10 @@ Deploy:
 [Skizze des BUILD-Laufs als PDF] (Build-BasisClient.pdf)
 
 ### Source-Code
+
 #### Anpassung am Source-Code
 
-In der [Skizze des BUILD-Laufs] (Build-BasisClient.pdf) werden für das GitHub-Repository **ingrid-mapclient-base** die Verzeichnisse BaseClient_COMMON, BaseClient_UMWELTKARTEN und BaseClient_NUMIS sowie das Submodul **mf-geoadmin3** dargestellt.
+In der [Skizze des BUILD-Laufs] (Build-BasisClient.pdf) werden für das GitHub-Repository **ingrid-mapclient-base** die Verzeichnisse BaseClient_COMMON, BaseClient_UMWELTKARTEN und BaseClient_NUMIS sowie das Submodul MF-GEOADMIN3 dargestellt.
 
 Für den BasisClient ohne die original SDI (Spatial Data Infrastructure) sind basierend auf dem Submodule mit dem Stand **1014736 des mf-geoadmin3** einige Anpassungen vorzunehmen. Diese sind in den folgenden Listen dokumentiert.
 
@@ -210,3 +207,9 @@ Die Anpassungen für den BasisClienten Umweltkarten sind im Verzeichnis BaseClie
 
 Die für den BasisClient notwendigen Änderungen sind in den Verzeichnissen BaseClient_NUMIS und BaseClient_UMWELTKARTEN gespeichert. Vor dem Build-Lauf werden die Dateien des jeweiligen BasisClienten im Verzeichnis BaseClient_COMMON mit den dort vorhanden allgemeinen Änderungen zusammengeführt.
 Diese gesamten Änderungen werden in den ausgecheckten original Sourcen des Submoduls ersetzt. Dies erfolgt mittels des Maven-Scripts unter Angabe des entsprechenden Profils Umweltkarten oder Numis.
+
+## OpenSource Aspekte
+
+Der Source Code des MF-GEOADMIN3 steht unter einer BSD Lizenz. 
+
+Der BaseClient verwendet ebenfalls die BSD Lizenz. Dadurch ist die Verwendung der Komponente in quasi allen Projekten (kommerziell, OpenSource) möglich.
